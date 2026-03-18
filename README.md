@@ -16,9 +16,9 @@ The Visio network diagram shown above illustrates the overall architecture of th
 
 ---
 
-# Cisco ISE Global Distributed Deployment IP Scheme
+## Cisco ISE Global Distributed Deployment IP Scheme
 
-## 1. Global Management and Replication Networks
+### 1. Global Management and Replication Networks
 
 | Segment | Subnet | Purpose |
 |--------|--------|---------|
@@ -27,9 +27,9 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | Global pxGrid Services | 10.10.2.0/24 | pxGrid service communication |
 | Global Monitoring / Logging | 10.10.3.0/24 | Monitoring, syslog, and reporting traffic |
 
-## 2. America Data Center
+### 2. America Data Center
 
-### 2.1 Core ISE Infrastructure
+#### 2.1 Core ISE Infrastructure
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
@@ -38,7 +38,7 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | ISE Primary MnT | 10.10.0.21 | /24 | Primary Monitoring Node |
 | ISE pxGrid Node | 10.10.0.31 | /24 | pxGrid services |
 
-### 2.2 America PSN Group
+#### 2.2 America PSN Group
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
@@ -48,16 +48,16 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | America PSN-4 | 10.20.10.14 | /24 | Policy Service Node |
 | America PSN VIP (Load Balancer) | 10.20.10.10 | /24 | AAA virtual IP for regional clients |
 
-### 2.3 Identity and Trust Services
+#### 2.3 Identity and Trust Services
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
 | America AD Server | 10.20.20.10 | /24 | Active Directory / LDAP / Kerberos |
 | America CA Server | 10.20.20.20 | /24 | Certificate Authority / PKI |
 
-## 3. Europe Africa Data Center
+### 3. Europe Africa Data Center
 
-### 3.1 Europe Africa PSN Group
+#### 3.1 Europe Africa PSN Group
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
@@ -67,16 +67,16 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | Europe Africa PSN-4 | 10.30.10.14 | /24 | Policy Service Node |
 | Europe Africa PSN VIP (Load Balancer) | 10.30.10.10 | /24 | AAA virtual IP for regional clients |
 
-### 3.2 Identity and Trust Services
+#### 3.2 Identity and Trust Services
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
 | Europe Africa AD Server | 10.30.20.10 | /24 | Active Directory / LDAP / Kerberos |
 | Europe Africa CA Server | 10.30.20.20 | /24 | Certificate Authority / PKI |
 
-## 4. Asia Pacific Data Center
+### 4. Asia Pacific Data Center
 
-### 4.1 Asia Pacific PSN Group
+#### 4.1 Asia Pacific PSN Group
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
@@ -86,14 +86,14 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | Asia Pacific PSN-4 | 10.40.10.14 | /24 | Policy Service Node |
 | Asia Pacific PSN VIP (Load Balancer) | 10.40.10.10 | /24 | AAA virtual IP for regional clients |
 
-### 4.2 Identity and Trust Services
+#### 4.2 Identity and Trust Services
 
 | Device / Service | IP Address | Subnet Mask | Purpose |
 |------------------|------------|-------------|---------|
 | Asia Pacific AD Server | 10.40.20.10 | /24 | Active Directory / LDAP / Kerberos |
 | Asia Pacific CA Server | 10.40.20.20 | /24 | Certificate Authority / PKI |
 
-## 5. Regional AAA Client Access Networks
+### 5. Regional AAA Client Access Networks
 
 | Region | Subnet | Purpose |
 |--------|--------|---------|
@@ -101,7 +101,7 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | Europe Africa AAA Clients | 10.31.0.0/16 | Switches, WLCs, VPN gateways, and NADs sending AAA requests |
 | Asia Pacific AAA Clients | 10.41.0.0/16 | Switches, WLCs, VPN gateways, and NADs sending AAA requests |
 
-## 6. Suggested DNS / FQDN Mapping
+### 6. Suggested DNS / FQDN Mapping
 
 | FQDN | IP Address | Purpose |
 |------|------------|---------|
@@ -113,7 +113,7 @@ The Visio network diagram shown above illustrates the overall architecture of th
 | ise-psn-emea.lab.local | 10.30.10.10 | Europe Africa PSN VIP |
 | ise-psn-apac.lab.local | 10.40.10.10 | Asia Pacific PSN VIP |
 
-## 7. Design Notes
+### 7. Design Notes
 
 - The America data center hosts the centralized PAN, MnT, and pxGrid services.
 - Each region has a dedicated PSN group for local AAA processing.
